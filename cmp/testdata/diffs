@@ -268,8 +268,8 @@
 >>> TestDiff/Reporter/PanicError
 <<< TestDiff/Reporter/AmbiguousType
   any(
-- 	"github.com/google/go-cmp/cmp/internal/teststructs/foo1".Bar{},
-+ 	"github.com/google/go-cmp/cmp/internal/teststructs/foo2".Bar{},
+- 	"github.com/ilius/go-cmp/cmp/internal/teststructs/foo1".Bar{},
++ 	"github.com/ilius/go-cmp/cmp/internal/teststructs/foo2".Bar{},
   )
 >>> TestDiff/Reporter/AmbiguousType
 <<< TestDiff/Reporter/AmbiguousPointer
@@ -329,10 +329,10 @@
 <<< TestDiff/Reporter/AmbiguousStringerMapKey
   map[any]string{
 - 	nil:                                                                     "nil",
-+ 	&⟪0xdeadf00f⟫"github.com/google/go-cmp/cmp_test".Stringer("hello"):      "goodbye",
-- 	"github.com/google/go-cmp/cmp_test".Stringer("hello"):                   "goodbye",
-- 	"github.com/google/go-cmp/cmp/internal/teststructs/foo1".Bar{S: "fizz"}: "buzz",
-+ 	"github.com/google/go-cmp/cmp/internal/teststructs/foo2".Bar{S: "fizz"}: "buzz",
++ 	&⟪0xdeadf00f⟫"github.com/ilius/go-cmp/cmp_test".Stringer("hello"):      "goodbye",
+- 	"github.com/ilius/go-cmp/cmp_test".Stringer("hello"):                   "goodbye",
+- 	"github.com/ilius/go-cmp/cmp/internal/teststructs/foo1".Bar{S: "fizz"}: "buzz",
++ 	"github.com/ilius/go-cmp/cmp/internal/teststructs/foo2".Bar{S: "fizz"}: "buzz",
   }
 >>> TestDiff/Reporter/AmbiguousStringerMapKey
 <<< TestDiff/Reporter/NonAmbiguousStringerMapKey

@@ -14,7 +14,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/google/go-cmp/cmp/internal/diff"
+	"github.com/ilius/go-cmp/cmp/internal/diff"
 )
 
 // CanFormatDiffSlice reports whether we support custom formatting for nodes

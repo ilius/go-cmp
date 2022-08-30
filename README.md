@@ -1,7 +1,7 @@
 # Package for equality of Go values
 
 [![GoDev](https://img.shields.io/static/v1?label=godev&message=reference&color=00add8)][godev]
-[![Build Status](https://github.com/google/go-cmp/actions/workflows/test.yml/badge.svg?branch=master)][actions]
+[![Build Status](https://github.com/ilius/go-cmp/actions/workflows/test.yml/badge.svg?branch=master)][actions]
 
 This package is intended to be a more powerful and safer alternative to
 `reflect.DeepEqual` for comparing whether two values are semantically equal.
@@ -28,17 +28,17 @@ See the [documentation][godev] for more information.
 
 This is not an official Google product.
 
-[godev]: https://pkg.go.dev/github.com/google/go-cmp/cmp
-[actions]: https://github.com/google/go-cmp/actions
+[godev]: https://pkg.go.dev/github.com/ilius/go-cmp/cmp
+[actions]: https://github.com/ilius/go-cmp/actions
 
 ## Install
 
 ```
-go get -u github.com/google/go-cmp/cmp
+go get -u github.com/ilius/go-cmp/cmp
 ```
 
 ## License
 
 BSD - See [LICENSE][license] file
 
-[license]: https://github.com/google/go-cmp/blob/master/LICENSE
+[license]: https://github.com/ilius/go-cmp/blob/master/LICENSE

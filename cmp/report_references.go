@@ -9,8 +9,8 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/google/go-cmp/cmp/internal/flags"
-	"github.com/google/go-cmp/cmp/internal/value"
+	"github.com/ilius/go-cmp/cmp/internal/flags"
+	"github.com/ilius/go-cmp/cmp/internal/value"
 )
 
 const (

@@ -9,8 +9,8 @@ import (
 	"reflect"
 	"sort"
 
-	"github.com/google/go-cmp/cmp"
-	"github.com/google/go-cmp/cmp/internal/function"
+	"github.com/ilius/go-cmp/cmp"
+	"github.com/ilius/go-cmp/cmp/internal/function"
 )
 
 // SortSlices returns a Transformer option that sorts all []V.

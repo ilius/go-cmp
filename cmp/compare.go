@@ -35,9 +35,9 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/google/go-cmp/cmp/internal/diff"
-	"github.com/google/go-cmp/cmp/internal/function"
-	"github.com/google/go-cmp/cmp/internal/value"
+	"github.com/ilius/go-cmp/cmp/internal/diff"
+	"github.com/ilius/go-cmp/cmp/internal/function"
+	"github.com/ilius/go-cmp/cmp/internal/value"
 )
 
 // TODO(≥go1.18): Use any instead of interface{}.

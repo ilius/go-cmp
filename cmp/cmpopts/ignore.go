@@ -10,8 +10,8 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/google/go-cmp/cmp"
-	"github.com/google/go-cmp/cmp/internal/function"
+	"github.com/ilius/go-cmp/cmp"
+	"github.com/ilius/go-cmp/cmp/internal/function"
 )
 
 // IgnoreFields returns an Option that ignores fields of the
