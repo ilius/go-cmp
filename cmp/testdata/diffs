@@ -328,7 +328,7 @@
 >>> TestDiff/Reporter/AmbiguousSliceHeader
 <<< TestDiff/Reporter/AmbiguousStringerMapKey
   map[any]string{
-- 	nil:                                                                     "nil",
+- 	nil:                                                                    "nil",
 + 	&⟪0xdeadf00f⟫"github.com/ilius/go-cmp/cmp_test".Stringer("hello"):      "goodbye",
 - 	"github.com/ilius/go-cmp/cmp_test".Stringer("hello"):                   "goodbye",
 - 	"github.com/ilius/go-cmp/cmp/internal/teststructs/foo1".Bar{S: "fizz"}: "buzz",
