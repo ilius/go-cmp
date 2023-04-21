@@ -403,9 +403,6 @@ func (cm comparer) String() string {
 // In other cases, the cmpopts.IgnoreUnexported option can be used to ignore
 // all unexported fields on specified struct types.
 func Exporter(f func(reflect.Type) bool) Option {
-	if !supportExporters {
-		panic("Exporter is not supported on purego builds")
-	}
 	return exporter(f)
 }
 
@@ -432,7 +429,7 @@ func AllowUnexported(types ...interface{}) Option {
 }
 
 // Result represents the comparison result for a single node and
-// is provided by cmp when calling Result (see Reporter).
+// is provided by cmp when calling Report (see Reporter).
 type Result struct {
 	_     [0]func() // Make Result incomparable
 	flags resultFlags

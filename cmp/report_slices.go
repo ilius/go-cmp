@@ -104,7 +104,7 @@ func (opts formatOptions) FormatDiffSlice(v *valueNode) textNode {
 	case t.Kind() == reflect.String:
 		sx, sy = vx.String(), vy.String()
 		isString = true
-	case t.Kind() == reflect.Slice && t.Elem() == reflect.TypeOf(byte(0)):
+	case t.Kind() == reflect.Slice && t.Elem() == byteType:
 		sx, sy = string(vx.Bytes()), string(vy.Bytes())
 		isString = true
 	case t.Kind() == reflect.Array:
@@ -147,7 +147,10 @@ func (opts formatOptions) FormatDiffSlice(v *valueNode) textNode {
 			})
 			efficiencyLines := float64(esLines.Dist()) / float64(len(esLines))
 			efficiencyBytes := float64(esBytes.Dist()) / float64(len(esBytes))
-			isPureLinedText = efficiencyLines < 4*efficiencyBytes
+			quotedLength := len(strconv.Quote(sx + sy))
+			unquotedLength := len(sx) + len(sy)
+			escapeExpansionRatio := float64(quotedLength) / float64(unquotedLength)
+			isPureLinedText = efficiencyLines < 4*efficiencyBytes || escapeExpansionRatio > 1.1
 		}
 	}
 
@@ -232,7 +235,7 @@ func (opts formatOptions) FormatDiffSlice(v *valueNode) textNode {
 			var out textNode = &textWrap{Prefix: "(", Value: list2, Suffix: ")"}
 			switch t.Kind() {
 			case reflect.String:
-				if t != reflect.TypeOf(string("")) {
+				if t != stringType {
 					out = opts.FormatType(t, out)
 				}
 			case reflect.Slice:
@@ -327,12 +330,12 @@ func (opts formatOptions) FormatDiffSlice(v *valueNode) textNode {
 	switch t.Kind() {
 	case reflect.String:
 		out = &textWrap{Prefix: "strings.Join(", Value: out, Suffix: fmt.Sprintf(", %q)", delim)}
-		if t != reflect.TypeOf(string("")) {
+		if t != stringType {
 			out = opts.FormatType(t, out)
 		}
 	case reflect.Slice:
 		out = &textWrap{Prefix: "bytes.Join(", Value: out, Suffix: fmt.Sprintf(", %q)", delim)}
-		if t != reflect.TypeOf([]byte(nil)) {
+		if t != bytesType {
 			out = opts.FormatType(t, out)
 		}
 	}
